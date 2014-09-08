@@ -1,0 +1,96 @@
+<resources>
+
+    <string name="app_name">Gallifreyan Clock Widget V2</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="pref_sync_summ">Summary</string>
+    <string name="color_prompt">Clock Color Type</string>
+    <string name="HoursPosition1">First Hours Position</string>
+    <string name="HoursPosition2">Second Hours Position</string>
+    <string name="MinutesPosition1">First Minutes Position</string>
+    <string name="MinutesPosition2">Second Minutes Position</string>
+    <string name="SecondsPosition1">First Seconds Position</string>
+    <string name="SecondsPosition2">Second Seconds Position</string>
+<string name="background_color_title">Title</string>
+    <string name="background_color_summary">Second Seconds Position</string>
+
+<color name="background_color_default">#00111111</color>
+    
+    
+      <string-array name="clockcolors">
+        <item>blackWithClear</item>
+        <item>blackWithWhite</item>
+        <item>pink</item>
+        <item>tardisblue</item>
+    </string-array>
+
+    <color name="text_color">#000000</color>
+
+    <string name="separator_string">:</string>
+    
+    <array name="blackWithWhite">
+        <item>@drawable/gale0</item>
+        <item>@drawable/gale1</item>
+        <item>@drawable/gale2</item>
+        <item>@drawable/gale3</item>
+        <item>@drawable/gale4</item>
+        <item>@drawable/gale5</item>
+        <item>@drawable/gale6</item>
+        <item>@drawable/gale7</item>
+        <item>@drawable/gale8</item>
+        <item>@drawable/gale9</item>
+    </array>
+<!-- 
+    <array name="blackWithClear">
+        <item>@drawable/gale0bt</item>
+        <item>@drawable/gale1bt</item>
+        <item>@drawable/gale2bt</item>
+        <item>@drawable/gale3bt</item>
+        <item>@drawable/gale4bt</item>
+        <item>@drawable/gale5bt</item>
+        <item>@drawable/gale6bt</item>
+        <item>@drawable/gale7bt</item>
+        <item>@drawable/gale8bt</item>
+        <item>@drawable/gale9bt</item>
+    </array>
+     <array name="blackWithWhite">
+        <item>@drawable/gale0</item>
+        <item>@drawable/gale1</item>
+        <item>@drawable/gale2</item>
+        <item>@drawable/gale3</item>
+        <item>@drawable/gale4</item>
+        <item>@drawable/gale5</item>
+        <item>@drawable/gale6</item>
+        <item>@drawable/gale7</item>
+        <item>@drawable/gale8</item>
+        <item>@drawable/gale9</item>
+    </array>
+    
+    <array name = "pink">
+        <item>@drawable/gale0pt</item>
+        <item>@drawable/gale1pt</item>
+        <item>@drawable/gale2pt</item>
+        <item>@drawable/gale3pt</item>
+        <item>@drawable/gale4pt</item>
+        <item>@drawable/gale5pt</item>
+        <item>@drawable/gale6pt</item>
+        <item>@drawable/gale7pt</item>
+        <item>@drawable/gale8pt</item>
+        <item>@drawable/gale9pt</item>
+    </array>
+     <array name = "tardisblue">
+        <item>@drawable/gale0tbt</item>
+        <item>@drawable/gale1tbt</item>
+        <item>@drawable/gale2tbt</item>
+        <item>@drawable/gale3tbt</item>
+        <item>@drawable/gale4tbt</item>
+        <item>@drawable/gale5tbt</item>
+        <item>@drawable/gale6tbt</item>
+        <item>@drawable/gale7tbt</item>
+        <item>@drawable/gale8tbt</item>
+        <item>@drawable/gale9tbt</item>
+    </array>
+     -->
+</resources>
