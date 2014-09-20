@@ -18,13 +18,28 @@
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                
                 <action android:name="com.jpetey88.gallifreyanclockwidget.ClockUpdate" />
+              
+                
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/gallifreyan_provider" />
         </receiver>
+<receiver
+    android:name=".ClockChange"
+    android:label="widgetBroadcastReceiver" >
+    <intent-filter>
+        <action android:name="com.jpetey88.intent.action.CHANGE_FORMAT" />
+    </intent-filter>
 
+    <meta-data
+        android:name="android.appwidget.provider"
+        android:resource="@xml/gallifreyan_provider" />
+</receiver>
+        
+        
+        
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" >

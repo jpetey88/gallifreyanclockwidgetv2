@@ -9,12 +9,15 @@ package com.jpetey88.gallifreyanclockwidget;
 
 public final class R {
     public static final class array {
-        public static final int blackWithWhite=0x7f070001;
+        public static final int blackWithClear=0x7f070001;
+        public static final int blackWithWhite=0x7f070002;
         public static final int clockcolors=0x7f070000;
-        public static final int pref_example_list_titles=0x7f070002;
-        public static final int pref_example_list_values=0x7f070003;
-        public static final int pref_sync_frequency_titles=0x7f070004;
-        public static final int pref_sync_frequency_values=0x7f070005;
+        public static final int pink=0x7f070003;
+        public static final int pref_example_list_titles=0x7f070005;
+        public static final int pref_example_list_values=0x7f070006;
+        public static final int pref_sync_frequency_titles=0x7f070007;
+        public static final int pref_sync_frequency_values=0x7f070008;
+        public static final int tardisblue=0x7f070004;
     }
     public static final class attr {
     }
@@ -24,16 +27,46 @@ public final class R {
     }
     public static final class drawable {
         public static final int gale0=0x7f020000;
-        public static final int gale1=0x7f020001;
-        public static final int gale2=0x7f020002;
-        public static final int gale3=0x7f020003;
-        public static final int gale4=0x7f020004;
-        public static final int gale5=0x7f020005;
-        public static final int gale6=0x7f020006;
-        public static final int gale7=0x7f020007;
-        public static final int gale8=0x7f020008;
-        public static final int gale9=0x7f020009;
-        public static final int ic_launcher=0x7f02000a;
+        public static final int gale0bt=0x7f020001;
+        public static final int gale0pt=0x7f020002;
+        public static final int gale0tbt=0x7f020003;
+        public static final int gale1=0x7f020004;
+        public static final int gale1bt=0x7f020005;
+        public static final int gale1pt=0x7f020006;
+        public static final int gale1tbt=0x7f020007;
+        public static final int gale2=0x7f020008;
+        public static final int gale2bt=0x7f020009;
+        public static final int gale2pt=0x7f02000a;
+        public static final int gale2tbt=0x7f02000b;
+        public static final int gale3=0x7f02000c;
+        public static final int gale3bt=0x7f02000d;
+        public static final int gale3pt=0x7f02000e;
+        public static final int gale3tbt=0x7f02000f;
+        public static final int gale4=0x7f020010;
+        public static final int gale4bt=0x7f020011;
+        public static final int gale4pt=0x7f020012;
+        public static final int gale4tbt=0x7f020013;
+        public static final int gale5=0x7f020014;
+        public static final int gale5bt=0x7f020015;
+        public static final int gale5pt=0x7f020016;
+        public static final int gale5tbt=0x7f020017;
+        public static final int gale6=0x7f020018;
+        public static final int gale6bt=0x7f020019;
+        public static final int gale6pt=0x7f02001a;
+        public static final int gale6tbt=0x7f02001b;
+        public static final int gale7=0x7f02001c;
+        public static final int gale7bt=0x7f02001d;
+        public static final int gale7pt=0x7f02001e;
+        public static final int gale7tbt=0x7f02001f;
+        public static final int gale8=0x7f020020;
+        public static final int gale8bt=0x7f020021;
+        public static final int gale8pt=0x7f020022;
+        public static final int gale8tbt=0x7f020023;
+        public static final int gale9=0x7f020024;
+        public static final int gale9bt=0x7f020025;
+        public static final int gale9pt=0x7f020026;
+        public static final int gale9tbt=0x7f020027;
+        public static final int ic_launcher=0x7f020028;
     }
     public static final class id {
         public static final int Corners=0x7f09000b;

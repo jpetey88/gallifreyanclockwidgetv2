@@ -3,6 +3,8 @@ package com.jpetey88.gallifreyanclockwidget;
 import java.sql.Date;
 import java.util.Calendar;
 
+import com.jpetey88.gallifreyanclockwidget.utils.Picasso;
+
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -18,6 +20,7 @@ import android.widget.RemoteViews;
 public class ClockProvider extends AppWidgetProvider {
 	public static String CLOCK_WIDGET_UPDATE = "com.jpetey88.gallifreyanclockwidget.ClockUpdate";
 	public static String LOG_TAG = "JoshisSuperawesome";
+	public static Picasso pablo = null;
 	
 	
 	@Override
@@ -40,21 +43,28 @@ public class ClockProvider extends AppWidgetProvider {
         alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), 1000, createClockTickIntent(context));
 	}
 	
-	
+	public static PendingIntent buildButtonPendingIntent(Context context) {
+		Intent intent = new Intent();
+	    intent.setAction("com.jpetey88.intent.action.CHANGE_FORMAT");
+	    
+		
+		return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+	}
 	
 	
 	
 	
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
-      //  Log.println(Log.ERROR, "Redpop", "I Hate Life Im killing myself");
+      //  Log.p0rintln(Log.ERROR, "Redpop", "I Hate Life Im killing myself");
         // Perform this loop procedure for each App Widget that belongs to this provider
      
      //   Log.d(LOG_TAG, "Updating here");
         
         for (int i=0; i<N; i++) {
             int appWidgetId = appWidgetIds[i];
-
+            pablo = new Picasso(context);
+            
             // Create an Intent to launch ExampleActivity
            // Intent intent = new Intent(context, ExampleActivity.class);
            // PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
@@ -62,6 +72,11 @@ public class ClockProvider extends AppWidgetProvider {
             // Get the layout for the App Widget and attach an on-click listener
             // to the buttonx
             RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.digital);
+        	
+            Log.d("joshy", "about to set");
+            views.setOnClickPendingIntent(R.id.digital, buildButtonPendingIntent(context));	
+            	
+            
            // views.setOnClickPendingIntent(R.id.button, pendingIntent);
 
             // Tell the AppWidgetManager to perform an update on the current app widget
@@ -86,13 +101,18 @@ public class ClockProvider extends AppWidgetProvider {
 		    }
 		}
 	}
-    private PendingIntent createClockTickIntent(Context context) {
+    public static PendingIntent createClockTickIntent(Context context) {
         Intent intent = new Intent(CLOCK_WIDGET_UPDATE);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         return pendingIntent;
 	}
     public static void updateAppWidget(Context context,	AppWidgetManager appWidgetManager, int appWidgetId) {
+    	
+    	if(pablo == null){
+    		pablo = new Picasso(context);
+    	}
+    
     	RemoteViews views = new RemoteViews(context.getPackageName(),	R.layout.digital); 
     	
     	Calendar calendar = Calendar.getInstance();
@@ -117,39 +137,17 @@ public class ClockProvider extends AppWidgetProvider {
 	        int secondSecond = second %10;
 	       
 	        
-	     /*   views.setImageViewResource(R.id.pos1, getNumberResource());
-	        views.setImageViewResource(R.id.pos2, R.drawable.gale2);
-	        views.setImageViewResource(R.id.pos3, R.drawable.gale3);
-	       views.setImageViewResource(R.id.pos4, R.drawable.gale4);
-	      views.setImageViewResource(R.id.pos5, R.drawable.gale5); 
-	      views.setImageViewResource(R.id.pos6, R.drawable.gale6);
-	        appWidgetManager.updateAppWidget(appWidgetId, views);
-	     
-	        */
-	        drawResource(views, R.id.pos1,getNumberResource(context, firstHour) );
-	        drawResource(views,  R.id.pos2,getNumberResource(context,secondHour) );
-	        drawResource(views, R.id.pos3,getNumberResource(context,firstMinute) );
-	        drawResource(views,  R.id.pos4,getNumberResource(context,secondMinute) );
-	        drawResource(views,  R.id.pos5,getNumberResource(context,firstSecond) );
-	        drawResource(views, R.id.pos6,getNumberResource(context,secondSecond) );
-	          
+	  
+	        pablo.paintNumber(views, R.id.pos1, firstHour);
+	        pablo.paintNumber(views, R.id.pos2, secondHour);
+	        pablo.paintNumber(views,R.id.pos3, firstMinute);
+	        pablo.paintNumber(views, R.id.pos4, secondMinute);
+	        pablo.paintNumber(views, R.id.pos5, firstSecond);
+	        pablo.paintNumber(views, R.id.pos6,secondSecond);
 	        appWidgetManager.updateAppWidget(appWidgetId, views);
 	}
    
-    public static void drawResource(RemoteViews views, int posId, int resourceId ){
-    	views.setImageViewResource(posId,resourceId);
-    }
     
-    public static int getNumberResource(Context context, int number){
-    	//Log.d("Returning", "return number "+ "for "+number );
-    	TypedArray arr = context.getResources().obtainTypedArray(R.array.blackWithWhite);
-    	
-    	int resource  = 0;
-		
-		resource =arr.getResourceId(number, 0);
-		//Log.d("Returning", "return number "+resource+ "for "+number );
-		return resource;
-    }
     
     
     

@@ -14,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.RemoteViews;
 import android.widget.Spinner;
 
 /**
@@ -55,7 +56,7 @@ public class SettingsActivity extends Activity {
             setResult(RESULT_CANCELED, cancelResultValue);
             // show the user interface of configuration
             setContentView(R.layout.configuration);
-            Spinner spinner = (Spinner) findViewById(R.id.color_spinner);
+            final Spinner spinner = (Spinner) findViewById(R.id.color_spinner);
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                     R.array.clockcolors, android.R.layout.simple_spinner_item);
             // Specify the layout to use when the list of choices appears
@@ -79,9 +80,17 @@ public class SettingsActivity extends Activity {
                             // so store it under a name that contains appWidgetId
                             SharedPreferences prefs = self.getSharedPreferences("prefs", 0);
                             SharedPreferences.Editor edit = prefs.edit();
+                            edit.putString("ColorChoice", spinner.getSelectedItem().toString());
                             //edit.putLong("goal" + appWidgetId, date.getTime());
                             edit.commit();
 
+                            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(self.getApplicationContext());
+                            RemoteViews views = new RemoteViews(self.getApplicationContext().getPackageName(),
+                            		R.layout.digital);
+                            views.setOnClickPendingIntent(R.id.digital, ClockProvider.buildButtonPendingIntent(self.getApplicationContext()));	
+                            		appWidgetManager.updateAppWidget(appWidgetId, views);
+                            
+                            
                             // change the result to OK
                             Intent resultValue = new Intent();
                             resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,

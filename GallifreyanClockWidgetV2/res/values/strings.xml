@@ -30,19 +30,7 @@
 
     <string name="separator_string">:</string>
     
-    <array name="blackWithWhite">
-        <item>@drawable/gale0</item>
-        <item>@drawable/gale1</item>
-        <item>@drawable/gale2</item>
-        <item>@drawable/gale3</item>
-        <item>@drawable/gale4</item>
-        <item>@drawable/gale5</item>
-        <item>@drawable/gale6</item>
-        <item>@drawable/gale7</item>
-        <item>@drawable/gale8</item>
-        <item>@drawable/gale9</item>
-    </array>
-<!-- 
+
     <array name="blackWithClear">
         <item>@drawable/gale0bt</item>
         <item>@drawable/gale1bt</item>
@@ -73,7 +61,7 @@
         <item>@drawable/gale1pt</item>
         <item>@drawable/gale2pt</item>
         <item>@drawable/gale3pt</item>
-        <item>@drawable/gale4pt</item>
+l        <item>@drawable/gale4pt</item>
         <item>@drawable/gale5pt</item>
         <item>@drawable/gale6pt</item>
         <item>@drawable/gale7pt</item>
@@ -92,5 +80,5 @@
         <item>@drawable/gale8tbt</item>
         <item>@drawable/gale9tbt</item>
     </array>
-     -->
+    
 </resources>
