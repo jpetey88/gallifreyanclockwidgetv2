@@ -26,4 +26,10 @@
                 android:text="Cancel"
                 android:id="@+id/cancelbutton"></Button>
         </LinearLayout>
+        <com.larswerkman.holocolorpicker.ColorPicker
+    android:id="@+id/picker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+        
+        
 </LinearLayout>

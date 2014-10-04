@@ -29,7 +29,20 @@
     <color name="text_color">#000000</color>
 
     <string name="separator_string">:</string>
+     <array name="baseImages">
+        <item>@drawable/base0</item>
+         <item>@drawable/base1</item>
+          <item>@drawable/base2</item>
+           <item>@drawable/base3</item>
+            <item>@drawable/base4</item>
+             <item>@drawable/base5</item>
+              <item>@drawable/base6</item>
+               <item>@drawable/base7</item>
+                <item>@drawable/base8</item>
+                 <item>@drawable/base9</item>
+     </array>
     
+    <!-- 
 
     <array name="blackWithClear">
         <item>@drawable/gale0bt</item>
@@ -80,5 +93,5 @@ l        <item>@drawable/gale4pt</item>
         <item>@drawable/gale8tbt</item>
         <item>@drawable/gale9tbt</item>
     </array>
-    
+     -->
 </resources>

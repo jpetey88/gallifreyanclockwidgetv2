@@ -2,6 +2,9 @@ package com.jpetey88.gallifreyanclockwidget;
 
 import java.util.GregorianCalendar;
 
+import com.jpetey88.gallifreyanclockwidget.utils.Picasso;
+import com.larswerkman.holocolorpicker.ColorPicker;
+
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
@@ -9,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -78,12 +82,17 @@ public class SettingsActivity extends Activity {
                             // if multiple widget instances are placed
                             // each can have own goal date
                             // so store it under a name that contains appWidgetId
+                    	    ColorPicker picker = (ColorPicker) findViewById(R.id.picker);
+                    	
                             SharedPreferences prefs = self.getSharedPreferences("prefs", 0);
                             SharedPreferences.Editor edit = prefs.edit();
                             edit.putString("ColorChoice", spinner.getSelectedItem().toString());
+                           Log.d("joshy",""+ picker.getColor());
+                            edit.putInt("NewColor", picker.getColor());
+                            Picasso.invalidateCache();
                             //edit.putLong("goal" + appWidgetId, date.getTime());
                             edit.commit();
-
+                        //    Picasso.map = null;
                             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(self.getApplicationContext());
                             RemoteViews views = new RemoteViews(self.getApplicationContext().getPackageName(),
                             		R.layout.digital);
